@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://btubksrgu8ra1"]
+
+[ext_resource type="Texture2D" uid="uid://c0ei63wrefxgb" path="res://icon.svg" id="1_ig7tw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
+size = Vector2(124, 126)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_0xm2m"]
+material = SubResource("StandardMaterial3D_ig7tw")
+
+[sub_resource type="MeshTexture" id="MeshTexture_h2yge"]
+mesh = SubResource("QuadMesh_0xm2m")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ig7tw"]
+
+[node name="root" type="Node2D" unique_id=200611814]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1972764179]
+position = Vector2(553, 579)
+scale = Vector2(8.296896, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1446132788]
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=821843617]
+scale = Vector2(1.0021956, 1)
+texture = ExtResource("1_ig7tw")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=826087661]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1904477105]
+texture = SubResource("MeshTexture_h2yge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=226865949]
+shape = SubResource("CircleShape2D_ig7tw")
